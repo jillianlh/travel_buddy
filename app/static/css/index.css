@@ -1,0 +1,88 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    /* outline: 1px dotted #000; */
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    text-align: center;
+    padding: 25px;
+    background-color: #dfdfdf;
+    /* background-image: url("https://owips.com/sites/default/files/clipart/world-map-clipart/130556/world-map-clipart-watercolor-130556-3192295.png"); */
+    /* background-image: url("https://image.architonic.com/img_pro2-4/144/1174/worldwide-54298-moss-b.jpg"); */
+}
+
+h2{
+    font-weight: 300;
+    font-size: 3.5rem;
+    margin-left: 10px;
+    color: #2e486b;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 5rem;
+    margin: 0;
+    color: #fff;
+}
+
+.img_container{
+    display: inline-block;
+    margin: 20px;
+    background-image: url("https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.register_container, .login_container{
+    padding: 15px;
+    display: inline-block;
+    vertical-align: top;
+    width: 350px;
+    text-align: left;
+    box-shadow: 3px 3px 3px #3d3d3d;
+    background-color: #567197dc;
+}
+
+p{
+    text-align: center;
+}
+
+.field, .field1{
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0.9rem;
+    width: 300px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 10px;
+    background-color: #e1f0fab4;
+}
+
+.field1{
+    width: 137px;
+    margin: 0px 3px;
+}
+
+.submit{
+    padding: 5px 10px;
+    width: 100px;
+    border: 1px solid #b5e4b7;
+    background-color: #b5e4b7;
+    color: #1f492c;
+    border-radius: 20px;
+    font-size: 1rem;
+    box-shadow: 3px 3px 3px #364d6d;
+    margin-bottom: 7px;
+}
+
+ul{
+    font-weight: 700;
+    list-style-type: none;
+}
+
+.button_container{
+    width: 342px;
+    text-align: right;
+}

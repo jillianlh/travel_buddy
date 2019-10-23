@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Travel Plan</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/add.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <h1>Add a Trip</h1>
+        <div class="links_container"><a href="/home" class="head_links">Home</a> | <a href="/logout" class="head_links">Logout</a></div>
+    </div>
+
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{message.tags}}"{% endif %}>{{message}}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="img_container">
+        <div class="add_container">
+            <form action="/add_trip" method="post">
+                {% csrf_token %}
+                <p><input type="text" name="destination" placeholder="Where do you want to go?" class="field"></p><br>
+                <p><textarea name="description" placeholder="Give your trip a description" cols="30" rows="10" class="desc"></textarea></p><br>
+                <p>Travel Date From: <input type="date" name="travel_start" class="date_field"></p><br>
+                <p>Travel Date To: <input type="date" name="travel_end" class="date_field"></p><br>
+                <p class="submit_container"><input type="submit" value="Add" class="submit"></p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

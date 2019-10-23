@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Welcome</h1>
+
+    {% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{message.tags}}"{% endif %}>{{message}}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div class="img_container">
+        <div class="register_container">
+            <h2>Register</h2>
+            <form action="/register" method="post">
+                {% csrf_token %}
+                <p><input type="text" name="first_name" placeholder="First Name" class="field1"><input type="text" name="last_name" placeholder="Last Name" class="field1"></p><br>
+                <p><input type="text" name="username" placeholder="Username" class="field"></p><br>
+                <p><input type="email" name="email" placeholder="Email" class="field"></p><br>
+                <p><input type="password" name="password" placeholder="Password" class="field"></p><br>
+                <p><input type="password" name="confirm_password" placeholder="Confirm Password" class="field"></p><br>
+                <p class="submit_container">
+                    <input type="hidden" name="form" value="register">
+                    <input type="submit" value="Register" class="submit">
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div class="img_container">
+        <div class="login_container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                {% csrf_token %}
+                <p><input type="text" name="username" placeholder="Username" class="field"></p><br>
+                <p><input type="password" name="password" placeholder="Password" class="field"></p><br>
+                <p class="submit_container">
+                    <input type="hidden" name="form" value="login">
+                    <input type="submit" value="Login" class="submit">
+                </p>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

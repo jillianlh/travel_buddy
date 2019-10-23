@@ -1,0 +1,82 @@
+*{
+    font-family: 'Nunito', sans-serif;
+    /* outline: 1px dotted #000; */
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    text-align: center;
+    padding: 25px;
+    background-color: #dfdfdf;
+}
+
+.links_container{
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: #2e486b;
+}
+
+.head_links{
+    text-decoration: none;
+    color: #fff;
+}
+
+h1{
+    font-weight: 200;
+    font-size: 5rem;
+    color: #fff;
+}
+
+h2{
+    font-weight: 300;
+    font-size: 2rem;
+    color: #2e486b;
+}
+
+.content{
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 20px;
+    border: none;
+    padding: 10px;
+    background-color: #e1f0fab4;
+}
+
+.img_container{
+    display: inline-block;
+    margin: 20px;
+    background-image: url("https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.trip_container{
+    padding: 25px;
+    display: inline-block;
+    vertical-align: top;
+    width: 500px;
+    text-align: left;
+    box-shadow: 3px 3px 3px #3d3d3d;
+    background-color: #567197dc;
+}
+
+p{
+    vertical-align: top;
+    text-align: left;
+    color: #000;
+}
+
+h3{
+    margin-top: 30px;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: #2e486b;
+}
+
+ul{
+    list-style-type: none;
+    font-weight: 200;
+    color: #000;
+}

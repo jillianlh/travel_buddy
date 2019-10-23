@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This Travel Trip</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/show_trip.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header">
+        <h1>The Trip</h1>
+        <div class="links_container"><a href="/home" class="head_links">Home</a> | <a href="/logout" class="head_links">Logout</a></div>
+    </div>
+
+    <div class="img_container">
+        <div class="trip_container">
+            {% for trip in trip %}
+            <h2>To: {{trip.destination}}</h2>
+
+            <div class="content">
+                <p>Planner: {{trip.user_planner.first_name}} {{trip.user_planner.last_name}}</p><br>
+                <p>Description: {{trip.description}}</p><br>
+                <p>Travel Date From: {{trip.travel_start}}</p><br>
+                <p>Travel Date To: {{trip.travel_end}}</p>
+            </div>
+    
+            <h3>Other users joining this trip:</h3>
+
+            <div class="content">
+                {% for user in joined_users %}
+                <ul>
+                    <li>{{user.first_name}} {{user.last_name}}</li>
+                </ul>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

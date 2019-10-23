@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Travels</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/travels.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,700,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <h1>Hey, {{logged_user.first_name}}</h1>
+            <a href="/logout" class="logout">Logout</a>
+        </div>
+    
+        <div class="your_trips">
+            <h2>Your Trip Schedules</h2>
+            <table class="table">
+                <tr>
+                    <th>Destination</th>
+                    <th class="plan_col">Plan</th>
+                    <th class="link_h">Travel Start Date</th>
+                    <th class="link_h">Travel End Date</th>
+                    <th class="link_h">View</th>
+                </tr> 
+                {% for trip in trips %}
+                <tr>
+                    <td>{{trip.destination}}</td>
+                    <td class="plan_col">{{trip.description}}</td>
+                    <td class="link_h">{{trip.travel_start}}</td>
+                    <td class="link_h">{{trip.travel_end}}</td>
+                    <td class="link"><a href="/travels/trip/{{trip.id}}" class="link">View Trip</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    
+        <p><a href="/add" class="submit">Add Travel Plan</a></p>
+    
+        <div class="other_trips">
+            <h2>Other Users' Travel Plans</h2>
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Destination</th>
+                    <th class="link_h">Travel Start Date</th>
+                    <th class="link_h">Travel End Date</th>
+                    <th class="link_h">View</th>
+                    <th class="link_h">Want to join?</th>
+                </tr> 
+                {% for trip in all_trips %}
+                {% for user in users %}
+                {% if trip not in trips and trip.user_planner == user %}
+                <tr>
+                    <td>{{user.first_name}} {{user.last_name}}</td>
+                    <td>{{trip.destination}}</td>
+                    <td class="link_h">{{trip.travel_start}}</td>
+                    <td class="link_h">{{trip.travel_end}}</td>
+                    <td class="link"><a href="/travels/trip/{{trip.id}}" class="link">View Trip</td>
+                    <td class="link"><a href="/join/{{trip.id}}" class="link">Yaaas, let's go!</a></td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
